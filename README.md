@@ -22,7 +22,7 @@ add a new connection police for MainActivity.class
 
 go to MainActivity.java
 
-add and call this method
+add this method
 ```
 private void mainActivityAppMessenger(Context context, String name){       
         {
@@ -92,4 +92,9 @@ private void mainActivityAppMessenger(Context context, String name){
         }
     }
 
+```
+
+now execute the method by calling
+```
+mainActivityAppMessenger(MainActivity.this,"main");
 ```
