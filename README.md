@@ -4,7 +4,7 @@ App Messenger is a part of [**Web App Api for android easier request your Api an
 <h1>USAGE</h1>
 
 
-Copy ![AppMessenger.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/AppMessenger.java), ![Messenger.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/Messenger.java), ![MessengerConnectionManager.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/MessengerConnectionManager.java) to youur project.
+Copy ![AppMessenger.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/AppMessenger.java), ![Messenger.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/Messenger.java), ![MessengerConnectionManager.java](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/java/com/after_project/appmessenger/MessengerConnectionManager.java) to your project.
 
 Then go to ![manifest file](https://github.com/thiagoschnell/appmessenger/blob/main/app/src/main/AndroidManifest.xml)
 

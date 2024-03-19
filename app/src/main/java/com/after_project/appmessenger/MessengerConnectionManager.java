@@ -93,6 +93,7 @@ public class MessengerConnectionManager {
             this.connectionType = connectionType;
             this.maxConnections = maxConnections;
             this.connectionRules = connectionRules;
+            checkForConnectionPoliceDuplicates(this);
         }
         ConnectionType getConnectionType() {
             return connectionType;
@@ -106,6 +107,22 @@ public class MessengerConnectionManager {
     }
     private ArrayList<ConnectionPolicy> connectionPolicies = new ArrayList<>();
     private List<AbstractMap.SimpleEntry< Messenger,MessengerConnection>> connections = new ArrayList<>();
+    private void checkForConnectionPoliceDuplicates(ConnectionPolicy _connectionPolicy){
+        int count = 0;
+        for(ConnectionPolicy connectionPolicy: connectionPolicies){
+            final String json = new Gson().toJson(connectionPolicy,ConnectionPolicy.class);
+            JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+            jsonObject.addProperty("clazz",connectionPolicy.clazz.getSimpleName());
+            JsonObject _jsonObject = JsonParser.parseString(new Gson().toJson(_connectionPolicy,ConnectionPolicy.class)).getAsJsonObject();
+            _jsonObject.addProperty("clazz",_connectionPolicy.clazz.getSimpleName());
+            if(jsonObject.toString().equals(_jsonObject.toString())){
+                throw new Error("Connection Police Duplicate found connectionPolicies.index(" + count + ")");
+            }else  if(connectionPolicy.clazz.getSimpleName().equals(_connectionPolicy.clazz.getSimpleName())){
+                throw new Error("Connection Police for "+_connectionPolicy.clazz.getSimpleName()+" already exists");
+            }
+            count++;
+        }
+    }
     MessengerConnectionManager(){
         /*
         CONNECTION_MULTCLIENT is a connection that are able to send response back for any active connection in your application.
