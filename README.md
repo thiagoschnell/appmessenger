@@ -12,7 +12,7 @@ and add
 ```
 <service android:name=".Messenger" />
 ```
-go to MessengerConnectionManager.java and move to the his constructor 
+go to MessengerConnectionManager.java and move to the his constructor ![here](https://github.com/thiagoschnell/appmessenger/blob/a62f5ad1ebb7bd4ee4f969b7b18ec7234273d150/app/src/main/java/com/after_project/appmessenger/MessengerConnectionManager.java#L126)
 
 add a new connection police for MainActivity.class
 ```
